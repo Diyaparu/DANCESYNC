@@ -61,12 +61,13 @@ https://drive.google.com/drive/folders/1jVwazR73rVKHJ7ABjKv4Oqty7kDOF17X?usp=dri
 4. Vector-Based Angle Synthesis (Mathematical AI)This is the logic layer that sits between the vision and the language models.Geometric Evaluation: It uses Euclidean distance and the Law of Cosines to determine the exact angle of joints like elbows and knees.Sync Logic: It compares the "Reference" vector against the "User" vector to find the Angular Variance, which is the primary metric used to decide how "in sync" a dancer truly is.
 
 How they work together:
-MediaPipe extracts the skeleton.
-Angle Synthesis calculates the synchronization math.
-Google Gemini reviews the math and tells you exactly why your arm movement was "lazy" or your timing was "off-beat".
+1.MediaPipe extracts the skeleton.
+2.Angle Synthesis calculates the synchronization math.
+3.Google Gemini reviews the math and tells you exactly why your arm movement was "lazy" or your timing was "off-beat".
 
 # Team Contributions
 Parvana S Nair : Front end and Back end
+
 Angel Gylson: Back end and Front end
 
 Made with ❤️ at TinkerHub
