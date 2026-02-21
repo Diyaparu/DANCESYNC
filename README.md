@@ -42,16 +42,33 @@ The implementation is divided into four critical phases:
 4. HUD Rendering: A sleek, neon-themed dashboard displays the live video, skeleton overlay, and the final post-dance roast report.
 
 # Project Documentation
+<img width="1919" height="1018" alt="Screenshot 2026-02-21 073447" src="https://github.com/user-attachments/assets/90b57efc-eab0-4c3d-9c45-c40ac13e33c3" />
 <img width="1918" height="1016" alt="Screenshot 2026-02-21 073537" src="https://github.com/user-attachments/assets/15969e60-39f3-4630-a8dc-a91546462c7a" />
 <img width="1919" height="1016" alt="Screenshot 2026-02-21 073607" src="https://github.com/user-attachments/assets/1adf1b2d-1783-49bc-8c74-8733d72f3ee3" />
 <img width="1918" height="1016" alt="Screenshot 2026-02-21 073630" src="https://github.com/user-attachments/assets/9b45afe9-b26d-43fa-9e99-133c7906386b" />
 <img width="1919" height="1018" alt="Screenshot 2026-02-21 073737" src="https://github.com/user-attachments/assets/084c4a1f-b1e2-4109-b840-8590343bb183" />
-<img width="1919" height="1018" alt="Screenshot 2026-02-21 073447" src="https://github.com/user-attachments/assets/90b57efc-eab0-4c3d-9c45-c40ac13e33c3" />
 
+# Project Demo
 
+The project video demonstrates the UI/UX Interface. First when same video is uploaded as the original and attempted it shows an accuracy above 80% and when two different videos of similar song is tested it shows an accuracy of 50% above. 
 
+https://drive.google.com/drive/folders/1jVwazR73rVKHJ7ABjKv4Oqty7kDOF17X?usp=drive_link
 
+# AI Tools Used 
+1. MediaPipe Pose (Core Vision Engine)MediaPipe acts as the "eyes" of the application. It uses a high-fidelity ML pipeline to perform real-time 33-point body landmark tracking. This allows the system to identify key joints (shoulders, elbows, wrists, hips, knees, and ankles) with sub-pixel accuracy, even when the dancer is moving rapidly or partially obscured. It provides the raw $X, Y, Z$ coordinates necessary to calculate human body geometry.
+2. Google Gemini 1.5 Flash (The Critique Engine)While MediaPipe provides the data, Google Gemini 1.5 Flash provides the "personality" and expert analysis.
+3. Contextual Analysis: It interprets the mathematical "Sync Score" to understand the quality of the performance.Natural Language Generation: It translates raw angular differences into "Financial Bestie" style roasts or "Pro Performance Tips," giving users feedback that feels human and corrective rather than just numerical.Multimodal Reasoning: Gemini is used to generate specific coaching advice based on the final performance bracket (Elite, Great, or Needs Work)
+4. Vector-Based Angle Synthesis (Mathematical AI)This is the logic layer that sits between the vision and the language models.Geometric Evaluation: It uses Euclidean distance and the Law of Cosines to determine the exact angle of joints like elbows and knees.Sync Logic: It compares the "Reference" vector against the "User" vector to find the Angular Variance, which is the primary metric used to decide how "in sync" a dancer truly is.
 
+How they work together:
+MediaPipe extracts the skeleton.
+Angle Synthesis calculates the synchronization math.
+Google Gemini reviews the math and tells you exactly why your arm movement was "lazy" or your timing was "off-beat".
 
+# Team Contributions
+Parvana S Nair : Front end and Back end
+Angel Gylson: Back end and Front end
+
+Made with ❤️ at TinkerHub
 
 
