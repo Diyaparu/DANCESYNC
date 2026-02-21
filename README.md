@@ -8,7 +8,7 @@ Member 1: Parvana S Nair - Muthoot Institute of Technology and Science
 Member 2: Angel Gylson - Muthoot Institute of Technology and Science
 
 # Hosted Project Link
-https://diyaparu.github.io/DANCESYNC/
+https://my-repo-jade-one.vercel.app/
 
 # Project Description
 DanceSync AI is a professional-grade motion analysis platform designed for dancers who want to bridge the gap between "practicing" and "perfecting." By leveraging MediaPipe Pose and Google Gemini AI, the application provides a high-fidelity comparison between a user's performance and a professional reference video. It doesn't just show you what you're doing; it mathematically dissects your form, timing, and synchronization to ensure every move is stage-ready.
