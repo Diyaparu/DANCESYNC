@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DanceSync Pro</title>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="landing-page" class="view">
+        <div class="hero">
+            <h1>DANCE<span class="neon">SYNC</span></h1>
+            <p>Show us what you've got.</p>
+            <button id="start-btn" class="main-btn">ENTER STUDIO</button>
+        </div>
+    </div>
+
+    <div id="app-page" class="view hidden">
+        <div class="app-container">
+            <nav>
+                <button id="back-btn">← EXIT</button>
+                <div class="score-board">
+                    <span class="label" style="text-align:center;">SYNC PRECISION</span>
+                    <div><span id="score-val" style="text-align:center;">0</span><span class="pct">%</span></div>
+                </div>
+                <button id="sync-btn" class="main-btn" disabled>START ANALYSIS</button>
+            </nav>
+            <div class="file-input" id="pro-input-container">
+    <label for="pro-upload">Upload Reference</label>
+    <input type="file" id="pro-upload" accept="video/*">
+</div>
+
+<div id="tips-container" class="hidden">
+    <div class="tips-header">PRO PERFORMANCE TIPS</div>
+    <div id="tips-list">
+        </div>
+</div>
+
+<div class="file-input" id="user-input-container">
+    <label for="user-upload">Upload Attempt</label>
+    <input type="file" id="user-upload" accept="video/*">
+</div>
+           
+
+            <div class="studio">
+                <div class="player">
+                    <video id="pro-video" crossorigin="anonymous"></video>
+                    <canvas id="pro-canvas"></canvas>
+                </div>
+                <div class="player">
+                    <video id="user-video" crossorigin="anonymous"></video>
+                    <canvas id="user-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

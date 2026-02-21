@@ -1,0 +1,254 @@
+
+:root { 
+    --neon: #00ffcc; 
+    --bg: #0a0a0a; 
+    --panel: #151515; 
+    /* These variables will be updated by JavaScript */
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+
+body, html { 
+    margin: 0; 
+    padding: 0; 
+    background: var(--bg); 
+    color: white; 
+    font-family: 'Segoe UI', sans-serif; 
+    overflow-y: auto; /* Change from 'hidden' to 'auto' to allow scrolling */
+    height: 100%;
+}
+
+/* --- UPDATED LANDING PAGE WITH MOUSE GLOW --- */
+#landing-page {
+    position: relative;
+    /* This creates the flowing green light effect */
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(0, 255, 204, 0.5), 
+        transparent 80%
+    );
+}
+
+.hero { text-align: center; z-index: 10; }
+
+.app-container { 
+    width: 100%; 
+    min-height: 100vh; /* Changed from height: 100% to allow expansion */
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* --- UPDATED TIPS SECTION --- */
+#tips-container {
+    margin: 40px auto; /* More space at the top */
+    padding: 30px;
+    width: 85%;
+    background: rgba(0, 255, 204, 0.03);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.tips-header {
+    font-size: 0.9rem;
+    color: var(--neon);
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#tips-list {
+    display: grid; /* Grid looks cleaner than flex for lists */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.tip-item {
+    background: #111;
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 4px solid var(--neon);
+    color: #eee;
+    font-size: 0.95rem;
+    transition: transform 0.2s;
+}
+
+.tip-item:hover {
+    transform: scale(1.02);
+    background: #1a1a1a;
+}
+
+/* --- MINI ANIMATION FOR TITLE --- */
+.hero h1 { 
+    font-size: 5rem; 
+    margin: 0; 
+    letter-spacing: 8px;
+    animation: titleFloat 3s ease-in-out infinite; /* Added animation */
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0px); text-shadow: 0 0 10px rgba(0, 255, 204, 0.2); }
+    50% { transform: translateY(-10px); text-shadow: 0 0 30px var(--neon); }
+}
+
+.hero p {
+    opacity: 0.8;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 0.8; transform: translateY(0); }
+}
+
+/* The rest of your CSS remains the same... */
+.view { height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; transition: 0.5s; }
+.hidden { display: none !important; }
+.neon-text { color: var(--neon); text-shadow: 0 0 20px var(--neon); }
+.main-btn { background: transparent; border: 2px solid var(--neon); color: var(--neon); padding: 15px 40px; cursor: pointer; font-weight: bold; transition: 0.3s; position: relative; overflow: hidden; }
+.main-btn:hover:not(:disabled) { background: var(--neon); color: black; box-shadow: 0 0 30px var(--neon); }
+/* ... (keep your workspace/studio CSS below) */
+
+
+/* --- 1. SLEEK EXIT BUTTON --- */
+#back-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 255, 204, 0.3); /* Dim neon border */
+    color: white;
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+#back-btn:hover {
+    border-color: var(--neon);
+    color: var(--neon);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+    background: rgba(0, 255, 204, 0.05);
+}
+
+/* --- 2. CUSTOM FILE INPUTS (The 'Choose File' Boxes) --- */
+.file-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hide the ugly default browser text/button */
+.file-input input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+/* Style the Label to act as the new button */
+.file-input label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: var(--neon);
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-input label:hover {
+    background: #222;
+    border-color: var(--neon);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
+}
+
+/* Add a subtle indicator that a file is selected */
+.file-input.selected label {
+    border-color: var(--neon);
+    background: rgba(0, 255, 204, 0.05);
+}
+
+#tips-container {
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+    background: rgba(0, 255, 204, 0.05);
+    border-top: 1px solid var(--neon);
+    border-bottom: 1px solid var(--neon);
+    text-align: center;
+}
+
+.tips-header {
+    font-size: 0.8rem;
+    color: var(--neon);
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#tips-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.tip-item {
+    background: #151515;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border-left: 3px solid var(--neon);
+}
+
+.upload-bar {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    gap: 40px;
+    padding: 20px;
+}
+
+/*body, html { margin: 0; padding: 0; background: var(--bg); color: white; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+*/
+.view { height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; transition: 0.5s; }
+.hidden { display: none !important; }
+
+/* Landing */
+.hero { text-align: center; }
+.hero h1 { font-size: 5rem; margin: 0; letter-spacing: 8px; }
+.neon-text { color: var(--neon); text-shadow: 0 0 20px var(--neon); }
+.main-btn { background: transparent; border: 2px solid var(--neon); color: var(--neon); padding: 15px 40px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+.main-btn:hover:not(:disabled) { background: var(--neon); color: black; box-shadow: 0 0 30px var(--neon); }
+.main-btn:disabled { border-color: #444; color: #444; cursor: not-allowed; }
+
+/* Workspace */
+.app-container { width: 100%; height: 100%; display: flex; flex-direction: column; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #111; }
+.score-board { text-align: center; }
+.score-label { font-size: 0.7rem; color: #888; letter-spacing: 2px; }
+#score-val { font-size: 3rem; font-weight: bold; color: var(--neon); }
+.pct { color: var(--neon); font-size: 1.2rem; }
+
+.upload-bar { display: flex; justify-content: center; gap: 30px; padding: 15px; background: #1a1a1a; }
+.file-input label { font-size: 0.7rem; display: block; margin-bottom: 5px; color: var(--neon); }
+
+.studio { display: flex; flex: 1; padding: 10px; gap: 10px; }
+.player { position: relative; flex: 1; background: #000; border-radius: 8px; overflow: hidden; border: 1px solid #333; }
+video, canvas { position: absolute; width: 100%; height: 100%; object-fit: contain; }
+.watermark { position: absolute; top: 10px; left: 10px; z-index: 10; font-size: 0.7rem; background: rgba(0,0,0,0.6); padding: 4px 8px; border-radius: 3px; }
